@@ -10,5 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let choice = prompt("Voulez vous du gâteau").toLowerCase();
+    if(choice == "oui"){
+        alert("Félicitation vous aimez le gâteau");
+    }else if(choice == "non"){
+        alert("du gâteau, ça ne se refuse pas !");
+    }else{
+        alert("Votre réponse n'est pas correcte")
+    }
 })();

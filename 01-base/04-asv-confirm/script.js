@@ -10,5 +10,12 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let information = "";
+    do{
+        let age = prompt("Quel est votre âge ?")
+        let sexe = prompt("Quel est votre sexe ?");
+        let ville  = prompt("Quel est votre ville");
+        information = `Votre age est : ${age}\nVotre sexe est : ${sexe}\nVotre ville est : ${ville}\n\n`
+    }while(!confirm(information + "Validez vous ces information"));
+    
 })();

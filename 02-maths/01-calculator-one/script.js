@@ -12,19 +12,37 @@
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
 
+    let op1 = document.querySelector("#op-one");
+    let op2 = document.querySelector("#op-two");
+
+    function doMath(operation) {
+        let op1Int = parseInt(op1.value);
+        let op2Int = parseInt(op2.value);
+        if(operation == "+"){
+            return op1Int + op2Int;
+        }else if(operation == "-"){
+            return op1Int - op2Int;
+        }else if(operation == "*"){
+            return op1Int * op2Int;
+        }else if(operation == '/'){
+            return op1Int / op2Int;
+        }
+        return 0;
+    }   
+
     document.getElementById("addition").addEventListener("click", () => {
-        // perform an addition
+        alert(doMath("+"))
     });
 
     document.getElementById("substraction").addEventListener("click", () => {
-        // perform a substraction
+        alert(doMath("-"))
     });
 
     document.getElementById("multiplication").addEventListener("click", () => {
-        // perform a multiplication
+        alert(doMath("*"))
     });
 
     document.getElementById("division").addEventListener("click", () => {
-        // perform a division
+        alert(doMath("/"));
     });
 })();

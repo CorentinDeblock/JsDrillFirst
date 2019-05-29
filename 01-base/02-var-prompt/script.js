@@ -10,5 +10,6 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let name = prompt("Quel est votre prenom");
+    alert(`Bonjour, ${name}`);
 })();

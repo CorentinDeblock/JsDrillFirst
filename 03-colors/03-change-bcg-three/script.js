@@ -10,5 +10,11 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    function randomNumber(){
+        return Math.random() * 255;
+    }
+    let body = document.body;
+    document.getElementById("run").addEventListener("click",()=>{
+        body.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
+    })
 })();

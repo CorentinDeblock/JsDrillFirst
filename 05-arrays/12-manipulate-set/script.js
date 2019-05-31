@@ -22,6 +22,15 @@
         "raisin",
         "cerise",
     ]);
-
+    document.getElementById("run").addEventListener("click",()=>{
+        fruits.delete("pomme");
+        fruits.delete("cerise");
+        fruits.add("banane");
+        fruits.add("kiwi")
+        fruits.forEach(value => {
+            console.log(value);     
+        })
+        console.log("\n")
+    })
     // your code here
 })();

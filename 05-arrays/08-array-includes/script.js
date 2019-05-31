@@ -26,4 +26,15 @@
     ];
 
     // your code here
+    document.getElementById("run").addEventListener("click",() => {
+        let arr = fruits.find(value => {
+            return value == "pomme";
+        })
+        if(arr != undefined){
+            console.log("Oui il y a une pomme");
+        }else{
+            console.log("Non il n'y a pas de pomme");
+        }   
+    })
+
 })();

@@ -11,6 +11,28 @@
 
 (() => {
     document.getElementById("run").addEventListener("click", () => {
-        // your code here
+        let arr = [];
+        let toString = () => {
+            let returnVal = "";
+            arr.forEach(element => {
+                returnVal += element.toString();
+            })
+            return returnVal;
+        }
+        for(let i = 2; i < 21;i++){
+            if(i % 2 == 0 ? true : false){
+                arr.push({
+                    index:i,
+                    number:Math.pow(i,2),
+                    toString: function() {
+                        let returnVal = "Pair : " + i + "\n" +
+                                        "Carré : " + this.number + "\n";
+
+                        return  returnVal;
+                    }
+                });
+            }
+        }
+        alert(toString());
     });
 })();

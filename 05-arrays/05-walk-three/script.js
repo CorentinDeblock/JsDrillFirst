@@ -37,6 +37,8 @@
             email: "mcoal4@creativecommons.org",
         },
     ];
-
+    people.forEach(value => {
+        console.log(value.firstname);
+    })
     // your code here
 })();

@@ -11,8 +11,23 @@
 
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
+    let input = document.getElementById("number");
+    let explain = document.querySelector(".explain");
 
+    let inputResult = document.createElement("p");
+
+    explain.appendChild(inputResult);
+
+    function factorial(value){
+        let number = 1;
+        
+        for(let i = 1; i < value + 1;i++){
+            number *= i;
+        }
+        return number;
+    }
     document.getElementById("run").addEventListener("click", () => {
-        // your code here
+        let num = input.value;
+        inputResult.innerText = `Factoriel de ${num} est égal à \n` + factorial(parseInt(num));
     });
 })();

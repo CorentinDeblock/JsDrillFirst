@@ -11,8 +11,14 @@
 
 (() => {
     // to get the value of an input: document.getElementById("element-id").value
-
+    let input = document.getElementById("numbers");
     document.getElementById("run").addEventListener("click", () => {
-        // your code here
+        let convertNum = input.value.split(",");
+        for(let i = 0; i < convertNum.length; i++){
+            convertNum[i] = parseInt(convertNum[i]);
+        }
+        input.value = convertNum.sort((a,b) => {
+            return a - b;
+        });
     });
 })();

@@ -10,6 +10,15 @@
 // You will have time to focus on it later.
 
 (() => {
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-    // your code here
+    let target = document.getElementById("target");
+
+    let date = new Date();
+    let option = {
+        weekday:"long",
+        day:"numeric",
+        month:"long",
+        year:"numeric",
+    }
+    let month =  date.toLocaleString("fr-FR",option) + `, ${date.getHours()}h${date.getMinutes()}`;
+    target.innerText = month;
 })();

@@ -87,6 +87,10 @@
             age: 81,
         },
     ];
-
     // your code here
+
+    let arr = people.filter(value => {
+        return value.age > 18;
+    })
+    console.log(arr);
 })();

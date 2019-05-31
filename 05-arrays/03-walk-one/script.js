@@ -24,6 +24,10 @@
         "raisin",
         "cerise",
     ];
-
+    document.getElementById("run").addEventListener("click",() => {
+        for(let i in fruits){
+            console.log(fruits[i]);
+        }
+    })
     // your code here
 })();

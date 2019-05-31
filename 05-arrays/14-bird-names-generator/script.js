@@ -37,6 +37,33 @@
         "tangent",
         "arboré",
     ]);
-
     // your code here
+    function birdsRandom() {
+        return birds[Math.round(Math.random() * (birds.length -1))];
+    }
+    function adjectivesRandom(){
+        let rand = Math.round(Math.random() * (adjectives.size -1));
+        let iterator = adjectives.keys();
+        
+        let value = iterator.value;
+        for(let i = 0; i < rand;i++){
+            value = iterator.next().value;
+        }
+        return value;
+    }
+
+    let target = document.getElementById("target");
+    document.getElementById("run").addEventListener("click",() => {
+        let bird = birdsRandom();
+        let abjective = adjectivesRandom();
+
+        let start = "Le";
+
+        if(bird.fem){
+            start = "La";
+            abjective += "e";  
+        }
+        target.innerText = `${start} ${bird.name} ${abjective}`;
+        
+    })
 })();

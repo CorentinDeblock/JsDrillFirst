@@ -10,5 +10,16 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    let body = document.querySelector("body");
+
+    function changeBgColor(id,bgColor){
+        document.getElementById(id).addEventListener("click",() =>{
+            body.style.backgroundColor = bgColor;
+        })
+    }
+    changeBgColor("red","red");
+    changeBgColor("green","green");
+    changeBgColor("yellow","yellow");
+    changeBgColor("blue","blue");
+     
 })();

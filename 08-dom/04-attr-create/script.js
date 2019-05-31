@@ -11,4 +11,13 @@
 
 (() => {
     // your code here
+    let target = document.getElementById("target");
+    let image = document.createElement("img");
+    let link = document.getElementById("source");
+    let section = document.querySelector(".material");
+
+    image.src = link.getAttribute("data-image");
+    target.appendChild(image);
+    
+    section.removeChild(link);
 })();

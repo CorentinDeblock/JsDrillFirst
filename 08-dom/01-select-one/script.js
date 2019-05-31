@@ -11,4 +11,5 @@
 
 (() => {
     // your code here
+    document.getElementById("target").innerText = "owned"
 })();

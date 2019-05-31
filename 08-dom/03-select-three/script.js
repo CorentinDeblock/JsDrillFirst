@@ -11,4 +11,8 @@
 
 (() => {
     // your code here
+    let target = document.getElementsByClassName("target");
+    for(let i in target){
+        target[i].innerText = "owned"
+    }
 })();

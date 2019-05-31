@@ -11,4 +11,10 @@
 
 (() => {
     // your code here
+    let image = document.querySelector("figure img");
+    let dataHover = image.getAttribute("data-hover");
+
+    image.addEventListener("mouseover",() => {
+        image.src = dataHover
+    })
 })();

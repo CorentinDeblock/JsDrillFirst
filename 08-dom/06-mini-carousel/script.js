@@ -10,6 +10,7 @@
 // You will have time to focus on it later.
 
 (() => {
+    let i = 0;
     const gallery = [
         "../../_shared/img/bell.svg",
         "../../_shared/img/clock.svg",
@@ -17,6 +18,17 @@
         "../../_shared/img/lemon.svg",
         "../../_shared/img/map.svg",
     ];
-
+    function newImage(){
+        if(i == gallery.length - 1){
+            i = 0;
+        }else{
+            i++;
+        }
+        return gallery[i];
+    }
     // your code here
+    let image = document.querySelector('section figure img');
+    document.getElementById("next").addEventListener("click",()=>{
+        image.src = newImage();
+    })
 })();

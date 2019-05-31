@@ -13,4 +13,19 @@
     const keys = ["name", "species", "age", "gender", "color"];
     const values = ["Skitty", "cat", 9, "female", "tabby"];
     // your code here
+    function randomKey(arr){
+        return arr[Math.round(Math.random() * (arr.length - 1))]
+    }
+    
+    function fromEntries(){
+        let obj = {
+            key: randomKey(keys),
+            value: randomKey(values)
+        }
+        console.log(obj);
+    }
+
+    document.getElementById("run").addEventListener('click',() => {
+        fromEntries();
+    })
 })();

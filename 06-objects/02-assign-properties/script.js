@@ -1,4 +1,4 @@
-/* becode/javascript
+ /* becode/javascript
  *
  * /06-objects/02-assign-properties/script.js - 6.2: assigner des propriétés
  *
@@ -27,4 +27,37 @@
         user: null,
     };
     // your code here
+    function fillEmpty(){
+        let toPush = [];
+        for(let i in computers){
+            let comp = computers[i]; 
+    
+            for(let j in defaultProps){
+                let pushing = true;
+                let data = {
+                    id:0,
+                    champ:"",
+                    value:""
+                }
+    
+                for(let k in comp){
+                    data.id = i;
+                    data.champ = j;
+                    data.value = defaultProps[j];
+    
+                    if(k == j){
+                        pushing = false;
+                    }
+                }
+                if(pushing){
+                    toPush.push(data);
+                }
+            }
+        }
+        toPush.forEach((value) => {
+            computers[value.id][value.champ] = value.value; 
+        }) 
+        console.log(computers);
+    }
+    document.getElementById("run").addEventListener("click",fillEmpty);
 })();

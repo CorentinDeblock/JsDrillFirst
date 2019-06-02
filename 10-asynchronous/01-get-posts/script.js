@@ -11,4 +11,30 @@
 
 (() => {
     // your code here
+
+    class posted{
+        constructor(){
+            this.button = document.getElementById("run");
+        }
+        call(predicate){
+            window.lib.getPosts((error,table)=>{
+                if(error == null){
+                    predicate(table)
+                }else{
+                    predicate("Une erreur est survenue");
+                }
+            })
+        }
+        launch(predicate){
+            this.button.addEventListener("click",predicate);
+        }
+    }
+
+    let post = new posted();
+
+    post.launch(() => {
+        post.call((value) => {
+            console.log(value);
+        })
+    })
 })();

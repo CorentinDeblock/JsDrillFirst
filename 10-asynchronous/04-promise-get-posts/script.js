@@ -11,4 +11,35 @@
 
 (() => {
     // your code here
+    class promiseMe{
+        constructor(element){
+            this.button = document.getElementById(element);
+            this.post = window.lib.getPosts;
+        }
+        when(value,pred){
+            if(this[value] != undefined){
+                this[value]().then(pred,false);
+            }else{
+                pred(`L'attribut retourné de ${value} n'est pas défini dans le script`,true);
+            }
+        }
+        onError(pred){
+            this.error = pred;
+        }
+        call(pred){
+            this.button.addEventListener("click",pred)
+        }
+    }
+
+    let promise = new promiseMe("run");
+
+    promise.call(()=>{
+        promise.when("post",(value,error)=>{
+            if(error){
+                console.error(value);
+                return;
+            }
+            console.log(value)
+        })
+    })
 })();

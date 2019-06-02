@@ -11,4 +11,19 @@
 
 (() => {
     // your code here
+    let inputOne = document.getElementById("pass-one");
+    let inputTwo = document.getElementById("pass-two");
+
+    function addError(element){
+        element.classList.add("error");
+    }
+
+    document.getElementById("run").addEventListener("click",()=>{
+        if(inputOne.value == inputTwo.value){
+            alert("Mot de passe validé");
+        }else{
+            addError(inputOne);
+            addError(inputTwo);
+        }
+    })
 })();

@@ -11,4 +11,27 @@
 
 (() => {
     // your code here
+    class button{
+        constructor(id){
+            this.id = document.getElementById(id);
+        }
+        listen(pred){
+            this.id.addEventListener("click",pred);
+        }
+    }
+
+    let target = new button("run");
+
+    async function receive(){
+        try{
+            let promise = await window.lib.getPersons();
+            console.log(promise);
+        }catch(error){
+            console.error("L'information n'a pas été trouvée");
+        }
+    }
+
+    target.listen(() => {
+        receive();
+    })
 })();

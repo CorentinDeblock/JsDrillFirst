@@ -11,4 +11,23 @@
 
 (() => {
     // your code here
+    class button{
+        constructor(id){
+            this.id = document.getElementById(id);
+        }
+        listen(pred){
+            this.id.addEventListener("click",pred);
+        }
+    }
+
+    let target = new button("run");
+
+    async function receive(){
+        let promise = await window.lib.getPosts();
+        console.log(promise);
+    }
+
+    target.listen(() => {
+        receive();
+    })
 })();

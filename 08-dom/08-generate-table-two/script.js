@@ -14,21 +14,29 @@
     function createTh(value){
         let th = document.createElement("th");
         th.innerText = value;
+        th.style.border = "1px solid red";
+        th.style.padding = "10px";
         return th;
     }
 
     function createTd(value){
         let td = document.createElement("td");
         td.innerText = value;
+        td.style.padding = "10px";
+        td.style.border = "1px solid #a1a1a1"
         return td;
     }
     function createTr(){
         return document.createElement("tr");
     }
-    let table = document.getElementById("target");
+    let target = document.getElementById("target");
     let head = createTr();
+    let table = document.createElement("table");
 
-    head.appendChild(createTh("Nombre"));
+    target.appendChild(table);
+
+
+    head.appendChild(createTh("nombres"));
     table.appendChild(head);
     for(let i = 1; i <= 10;i++){
         let tr = createTr();

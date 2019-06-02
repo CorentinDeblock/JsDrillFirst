@@ -11,4 +11,36 @@
 
 (() => {
     // your code here
+
+    let target = document.getElementById("target");
+
+    class localCounter {
+        constructor(target,name){
+            this.target = target;
+            this.name = name; 
+
+            let counter = this.getCounter();
+            if(!counter){
+                this.setCounter(0);
+            }else{
+                target.innerText = counter;
+            }
+        }
+        getCounter(){
+            return localStorage.getItem(this.name);
+        }
+        setCounter(value){
+            localStorage.setItem("counter",value);
+        }
+        addCounter(value){
+            let setVal = parseInt(this.getCounter()) + value;
+            this.setCounter(setVal);
+            target.innerText = setVal;
+        }
+    }
+    let localcounter = new localCounter(target,"counter");
+    document.getElementById("increment").addEventListener("click",()=> {
+        localcounter.addCounter(1);
+    })
+
 })();

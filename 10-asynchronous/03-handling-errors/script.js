@@ -11,4 +11,13 @@
 
 (() => {
     // your code here
+    document.getElementById("run").addEventListener("click",()=>{
+        window.lib.getPersons((error,value) => {
+            if(error == null){
+                console.log(value);
+            }else{
+                console.error("Aucune personne trouvé");
+            }
+        })
+    })
 })();

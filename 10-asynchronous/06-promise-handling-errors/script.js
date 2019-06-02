@@ -10,5 +10,25 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
-})();
+    class button{
+        constructor(id){
+            this.id = document.getElementById(id);
+        }
+        listen(pred){
+            this.id.addEventListener("click",pred);
+        }
+    }
+
+    let target = new button("run");
+
+    let promise;
+
+    target.listen(() =>{
+        promise = window.lib.getPersons()
+        promise.then((value) => {
+            console.log(value)
+        }).catch((rej) => {
+            console.error(rej);
+        })
+    })
+})();   

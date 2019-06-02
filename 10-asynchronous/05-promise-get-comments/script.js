@@ -11,4 +11,35 @@
 
 (() => {
     // your code here
+    class promiseMe{
+        constructor(element){
+            this.button = document.getElementById(element);
+        }
+        receivePost(pred){
+            return window.lib.getPosts().then(pred);
+        }
+        receiveComments(id,pred){
+            return window.lib.getComments(id).then(pred);
+        }
+        onError(pred){
+            this.error = pred;
+        }
+        call(pred){
+            this.button.addEventListener("click",pred)
+        }
+    }
+
+    let promise = new promiseMe("run");
+    promise.call(()=>{
+        promise.receivePost((table) => {
+            let copy = table;
+            for(let id in copy){
+                promise.receiveComments(id,(comment) => {
+                    copy[id].comments = comment;
+                })
+            }
+            console.log(copy);
+            return copy;
+        })
+    })
 })();

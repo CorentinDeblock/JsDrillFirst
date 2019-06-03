@@ -112,5 +112,5 @@
         value.classList.add("wave"); 
         target.appendChild(value);
     })
-    wave.playAnimation(0.115);
+    wave.playAnimation(0.080);
 })();

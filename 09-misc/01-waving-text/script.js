@@ -104,7 +104,7 @@
         }
     }
     let target = document.getElementById("target");
-    let wave = new Wave("Don't hate the player hate the game.\n- Ice T",0,8,24,48);
+    let wave = new Wave("Don't hate the player hate the game.\n- Ice T",0,4,38,74);
     target.innerText = "";
 
     wave.forEach((value,i) => {

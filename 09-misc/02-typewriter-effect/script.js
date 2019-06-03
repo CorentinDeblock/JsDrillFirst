@@ -73,7 +73,7 @@
         }
     }
     let target = document.getElementById("target");
-    let typewriter = new TypeWriter(target.innerText,true,true,400,200);
+    let typewriter = new TypeWriter(target.innerText,true,true,200,50);
     let typeSound = new Audio("typewriter.wav");
     typeSound.volume = 0.2;
     

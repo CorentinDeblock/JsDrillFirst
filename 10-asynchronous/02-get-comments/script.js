@@ -44,10 +44,14 @@
 
     post.launch(() => {
         post.callPost((table) => {
-            post.callComment(table,(element,comment)=> {
-                element.comments = comment;
-            })
-            console.log(table);
+            if(typeof(table) == "string"){
+                console.log(table)
+            }else{
+                post.callComment(table,(element,comment)=> {
+                    element.comments = comment;
+                })
+                console.log(table)
+            }
         })
     })
 })();

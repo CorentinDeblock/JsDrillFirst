@@ -14,15 +14,22 @@
     class promiseMe{
         constructor(element){
             this.button = document.getElementById(element);
+            this.onError = (error) => {
+                console.error(error);
+            }
         }
-        receivePost(pred){
-            return window.lib.getPosts().then(pred);
+        when(value,pred,...param){
+            if(this[value] != undefined){
+                this[value](param).then(pred,false).catch(this.onError);
+            }else{
+                pred(`L'attribut retourné de ${value} n'est pas défini dans le script`,true);
+            }
         }
-        receiveComments(id,pred){
-            return window.lib.getComments(id).then(pred);
+        addFunction(field,value){
+            this[field] = value;
         }
-        onError(pred){
-            this.error = pred;
+        changeError(pred){
+            this.onError = pred;
         }
         call(pred){
             this.button.addEventListener("click",pred)
@@ -30,16 +37,21 @@
     }
 
     let promise = new promiseMe("run");
+    promise.addFunction("post",window.lib.getPosts);
+    promise.addFunction("comment",window.lib.getComments);
+
+    promise.changeError((error) => {
+        console.error("Une erreur est survenue : " + error);
+    });
+
     promise.call(()=>{
-        promise.receivePost((table) => {
-            let copy = table;
-            for(let id in copy){
-                promise.receiveComments(id,(comment) => {
-                    copy[id].comments = comment;
-                })
-            }
-            console.log(copy);
-            return copy;
+        promise.when("post",(table)=>{
+            table.forEach(element => {
+                promise.when("comment",(value) => {
+                    element.comment = value;
+                },element.id)
+            });
+            console.log(table);
         })
-    })
-})();
+    })}
+)();

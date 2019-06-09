@@ -13,8 +13,12 @@
     // your code here
     let image = document.querySelector("figure img");
     let dataHover = image.getAttribute("data-hover");
+    let defaultSrc = image.src;
 
     image.addEventListener("mouseover",() => {
         image.src = dataHover
+    })
+    image.addEventListener("mouseout",() => {
+        image.src = defaultSrc;
     })
 })();

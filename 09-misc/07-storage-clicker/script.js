@@ -30,7 +30,7 @@
             return localStorage.getItem(this.name);
         }
         setCounter(value){
-            localStorage.setItem("counter",value);
+            localStorage.setItem(this.name,value);
         }
         addCounter(value){
             let setVal = parseInt(this.getCounter()) + value;

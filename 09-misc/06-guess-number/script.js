@@ -31,7 +31,7 @@
         isCorrect(value,guess){
             return {
                 isWin: (value == guess ? true : false),
-                phrase: (value > guess ? "Trop grand" : "Trop petit")
+                phrase: (value > guess ? "Plus petit" : "Plus grand")
             }
         }
     }

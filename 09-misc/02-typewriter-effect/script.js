@@ -73,23 +73,33 @@
         }
     }
     let target = document.getElementById("target");
-    let typewriter = new TypeWriter(target.innerText,true,true,200,50);
+    let typewriter = new TypeWriter(target.innerHTML,true,true,200,50);
     let typeSound = new Audio("typewriter.wav");
     typeSound.volume = 0.2;
     
     typeSound.isPlaying = () => {
         return typeSound.currentTime > 0 && !typeSound.paused;
     }
-
     target.innerText = "";
-    typewriter.playAnimation((value,timer) => {
-        if(!typeSound.isPlaying()){
-            typeSound.play();
-        }else{
-            typeSound.currentTime = 0;
-        }
 
-        
-        target.innerText = value
-    })
+    let span = document.createElement("span");
+    let content = document.createElement("span");
+
+    span.innerText = '|';
+    span.classList.add("typer")
+
+    target.appendChild(content)
+    target.appendChild(span);
+
+    typeSound.onloadeddata = () => {
+
+        typewriter.playAnimation((value,timer) => {
+            if(!typeSound.isPlaying()){
+                typeSound.play();
+            }else{
+                typeSound.currentTime = 0;
+            }
+            content.innerHTML = value;
+        })
+    }
 })();

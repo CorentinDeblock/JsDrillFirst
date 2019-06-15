@@ -16,10 +16,13 @@
 
     input.addEventListener("keypress",(event) => {
         let length = input.value.length;
-        counter.innerText = `${length}/10`;
-
         if(length == 10){
             event.preventDefault();
+            return false;
         }
+    })
+    input.addEventListener("keyup",(event) => {
+        let length = input.value.length;
+        counter.innerText = `${length}/10`;
     })
 })();

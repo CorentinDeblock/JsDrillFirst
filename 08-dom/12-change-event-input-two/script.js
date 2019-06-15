@@ -15,19 +15,11 @@
     let span = document.getElementById("validity");
     
     let checkVictory = (input) => {
-        let counter = 0;
         if(input.length >= 8){
-            for(let i = 0; i < input.length;i++){
-                let parse = parseInt(input[i]);
-                if(parse != NaN){
-                    if(parse >= 0 && input[i] <= 9){
-                        counter++;
-                    }
-                }
-            }
-            if(counter >= 2){
+            let check = input.match(/[0-9]/g).length
+
+            if(check >= 2)
                 return true;
-            }
         }
         return false;
     }
@@ -39,8 +31,7 @@
             span.innerText = "Pas ok";
         }
     }
-    let condition = false;
-    input.addEventListener("keypress",() => {
+    input.addEventListener("keyup",() => {
         let value = input.value;
         changeSpan(checkVictory(value));
     })

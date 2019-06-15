@@ -12,14 +12,12 @@
 (() => {
     let body = document.querySelector("body");
 
-    function changeBgColor(id,bgColor){
-        document.getElementById(id).addEventListener("click",() =>{
-            body.style.backgroundColor = bgColor;
+    function changeBgColor(...bgColor){
+        bgColor.forEach(value =>{
+            document.getElementById(value).addEventListener("click",() =>{
+                body.style.backgroundColor = value;
+            })
         })
     }
-    changeBgColor("red","red");
-    changeBgColor("green","green");
-    changeBgColor("yellow","yellow");
-    changeBgColor("blue","blue");
-     
+    changeBgColor("red","green","yellow","blue");
 })();

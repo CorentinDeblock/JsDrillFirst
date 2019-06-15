@@ -43,7 +43,7 @@
             yearFormat: date.getFullYear() - year
         }
     }
-    console.log(date.getMonth());
+ 
     document.getElementById("run").addEventListener("click",()=>{
         let formatedData = countDay(getInput("dob-day"),getInput("dob-month"),getInput("dob-year"));
 

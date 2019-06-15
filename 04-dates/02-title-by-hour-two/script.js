@@ -18,8 +18,14 @@
     let target = document.getElementById("target");
 
 
-    if(minute >= 30 && hours >= 17){
+    if(hours >= 18){
         target.innerText = "Bonsoir";
+    }else if(hours >= 17){
+        if(minute >= 30){
+            target.innerText = "Bonsoir";
+        }else{
+            target.innerText = "Bonjour";
+        }
     }else{
         target.innerText = "Bonjour";
     }

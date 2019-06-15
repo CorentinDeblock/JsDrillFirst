@@ -23,18 +23,16 @@
         "pêche",
         "raisin",
         "cerise",
-    ];
+    ]; 
 
     // your code here
     document.getElementById("run").addEventListener("click",() => {
-        let arr = fruits.find(value => {
-            return value == "pomme";
-        })
-        if(arr != undefined){
+        let findPomme = fruits.includes("pomme");
+        if(findPomme){
             console.log("Oui il y a une pomme");
-        }else{
+        } else{
             console.log("Non il n'y a pas de pomme");
-        }   
+        }
     })
 
 })();

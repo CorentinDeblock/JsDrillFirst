@@ -19,9 +19,7 @@
     }
 
     document.getElementById("run").addEventListener("click",() => {
-        if(inputOne.value == inputTwo.value){
-            alert("Mot de passe validé");
-        }else{
+        if(inputOne.value != inputTwo.value){
             colorElement(inputOne);
             colorElement(inputTwo);
         }

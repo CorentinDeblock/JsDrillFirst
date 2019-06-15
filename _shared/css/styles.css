@@ -270,3 +270,20 @@ ol#target {
     font-size: 1.4rem;
     color: slategray;
 }
+.typer{
+    color:red;
+    animation-name: cling;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cling{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}

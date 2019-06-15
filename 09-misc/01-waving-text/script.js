@@ -104,7 +104,7 @@
         }
     }
     let target = document.getElementById("target");
-    let wave = new Wave("Don't hate the player hate the game.\n- Ice T",0,4,38,74);
+    let wave = new Wave("Je ne sais pas quoi mettre alors voici une liste de course:\nPomme de terre\nfromage\nSalade\nTomate\nOgnion",0,4,38,58);
     target.innerText = "";
 
     wave.forEach((value,i) => {
@@ -112,5 +112,5 @@
         value.classList.add("wave"); 
         target.appendChild(value);
     })
-    wave.playAnimation(0.080);
+    wave.playAnimation(0.090);
 })();

@@ -26,21 +26,8 @@
         "raisin",
         "cerise",
     ];
-    function noSame(array){
-        for(let i in array){
-            let actual = array[i];
-            for(let j in array){
-                if(i != j){
-                    if(actual == array[j]){
-                        array.splice(j,1);
-                    }
-                }
-            }
-        }
-        return array;
-    }
     // your code here
     document.getElementById("run").addEventListener("click",() => {
-        console.log(noSame(fruits));
+        console.log(new Set(fruits));
     })
 })();

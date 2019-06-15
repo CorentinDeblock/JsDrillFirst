@@ -10,9 +10,9 @@
 // You will have time to focus on it later.
 
 (() => {
-    let body = document.querySelector("body");
+    let html = document.querySelector("html");
     let input = document.getElementById("color");
     document.getElementById("run").addEventListener("click",() =>{
-        body.style.backgroundColor = input.value;
+        html.style.backgroundColor = input.value;
     })
 })();

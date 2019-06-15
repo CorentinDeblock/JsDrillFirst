@@ -29,7 +29,7 @@
         }
     }
     // your code here
-    Animal.greeting = "Hello";
+    Animal.greeting = "Hello ";
 
     let cat = new Cat();
     let dog = new Dog();

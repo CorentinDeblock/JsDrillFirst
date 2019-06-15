@@ -23,11 +23,17 @@
         "cerise",
     ];
     document.getElementById("run").addEventListener("click",() => {
+        console.log("Avant\n\n")
+        fruits.forEach(value => {
+            console.log(value);
+        })
+
         fruits.pop()
         fruits.shift();
         fruits.unshift("banane");
         fruits.push("kiwi");
 
+        console.log("\nAprès\n\n")
         fruits.forEach(value => {
             console.log(value);
         })

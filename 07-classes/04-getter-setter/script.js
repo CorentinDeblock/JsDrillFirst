@@ -16,22 +16,21 @@
             this.firstname = ""
             this.lastname = ""
 
-            this.setName = (fullname) => {
-                let splitter = fullname.split(" ");
-                this.firstname = splitter[0];
-                this.lastname = splitter[1]
-            }
-            this.getName = () => {
-                return `Firstname : ${this.firstname} \nLastname : ${this.lastname}`;
-            }
-
-            this.setName(fullname);
+            this.name = fullname;
+        }
+        get name(){
+            return `Firstname : ${this.firstname} \nLastname : ${this.lastname}`;
+        }
+        set name(fullname){
+            let splitter = fullname.split(" ");
+            this.firstname = splitter[0];
+            this.lastname = splitter[1]
         }
     }
     document.getElementById("run").addEventListener("click",()=>{
         let person = new Person("Corentin Deblock");
-        console.log(person.getName());
-        person.setName("Caroline Marg");
-        console.log(person.getName())
+        console.log(person.name);
+        person.name = "Caroline Marg";
+        console.log(person.name);
     })
 })();

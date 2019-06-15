@@ -15,13 +15,12 @@
     // your code here
     
     function fromEntrie(){
-        let obj = {
-        
-        }
+        let mappedKey = new Map();
         for(let i in keys){
-            obj[keys[i]] = values[i]
+            mappedKey.set(keys[i],values[i]);
         }
-        return Object.fromEntries(Object.entries(obj)); 
+        console.log(mappedKey);
+        return Object.fromEntries(mappedKey); 
     }
 
     document.getElementById("run").addEventListener('click',() => {

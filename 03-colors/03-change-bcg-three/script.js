@@ -13,8 +13,8 @@
     function randomNumber(){
         return Math.random() * 255;
     }
-    let body = document.body;
+    let html = document.querySelector("html");
     document.getElementById("run").addEventListener("click",()=>{
-        body.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
+        html.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
     })
 })();

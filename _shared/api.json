@@ -46,6 +46,12 @@
         "Cold and ice manipulation",
         "Ability to assume an enhanced physical form made of solid ice"
       ]
+    },
+    {
+      "name": "Natman",
+      "alterEgo": "Busman",
+      "abilities": "Branche des câble",
+      "id": 6
     }
   ]
 }

@@ -24,7 +24,7 @@
     
     // your code here
     document.getElementById("run").addEventListener("click",() =>{
-        console.log(`Nombre de people dans le set : ${people.size}`);
+        console.log(`Nombre de personne dans le set : ${people.size}`);
         if(people.has("Alexandre")){
             console.log("Alexandre fait partie du set")
         }

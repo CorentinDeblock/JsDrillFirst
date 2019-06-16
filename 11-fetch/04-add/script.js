@@ -43,6 +43,9 @@
                 body:JSON.stringify(data)
             }).then(this.convert).then(func).catch(this.onError)
         }
+        get(func){
+            fetch(this.url).then(this.convert).then(func).catch(this.onError);
+        }
     }
     class Input{
         constructor(id){

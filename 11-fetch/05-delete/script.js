@@ -36,8 +36,11 @@
         }
         delete(ids,func){
             fetch(this.url + '/' + ids,{
-                method:'delete',
-            }).then(func).catch(this.onError);
+                method:'DELETE',
+            }).then(this.convert).then(func).catch(this.onError);
+        }
+        get(func){
+            fetch(this.url).then(this.convert).then(func).catch(this.onError);
         }
     }
     class Input{
@@ -58,10 +61,10 @@
     })
 
     button.listen(() => {
-        fetcher.delete(input.getValue(),() => {
+        fetcher.delete(input.getValue(),(result) => {
             fetcher.get((value) => {
                 console.log(value);
-            });
+            })
         })
     })
 })();

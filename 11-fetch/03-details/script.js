@@ -45,13 +45,8 @@
         }
     }
 
-    class DocumentAnalyzer{
-        constructor(element){
-            this.content = document.getElementById(element).content;
-        }
-        get(element){
-            return this.content.querySelector(`.${element}`);
-        }
+    DocumentAnalyzer = (element) => {
+        return document.getElementById(element).content;
     }
 
     class ElementReplicator{
@@ -98,9 +93,7 @@
 
     let fetcher = new Fetcher("http://localhost:3000/heroes");
 
-    let template = new DocumentAnalyzer("tpl-hero");
-
-    let elementCreator = new ElementReplicator(template.content);
+    let elementCreator = new ElementReplicator(DocumentAnalyzer("tpl-hero"));
     
     let input = new Input("hero-id");
 
